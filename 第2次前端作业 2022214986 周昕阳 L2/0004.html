@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WuWuWuWu</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        background-color: #fefefe;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #box {
+        background-color: white;
+        height: 520px;
+        width: 400px;
+        border-radius: 10px;
+        border: 1px;
+    }
+
+    #box:hover {
+        box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+    }
+
+    #box div {
+        overflow: hidden;
+    }
+
+    #box div img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+    }
+
+    #box div img:hover {
+        transform: scale(1.2);
+    }
+
+    #box h2 {
+        padding: 0 18px;
+        margin-top: 18px;
+    }
+
+    #box h3 {
+        padding: 0 18px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    #box p {
+        font-size: 14px;
+        text-indent: 2em;
+        padding: 0 18px;
+    }
+
+    #box a {
+        display: block;
+        height: 40px;
+        width: 120px;
+        background-color: #6da2d7;
+        margin: auto;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 20px;
+
+
+    }
+
+    #box a:hover {
+        background-color: #2c5fc5;
+    }
+
+    #box a {
+        text-decoration: none;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div><img src="pic.jpeg" alt="前端研发部" width="400px"></div>
+        <h2>前端研发部</h2>
+        <h3>
+            将想法画成现实，让数据激发可能
+        </h3>
+        <p>
+            我们是想法的实现者，在这里，你可以把你天马行空的想象画成现实，利用手中的三剑客（HTML，CSS，JS）绘画出绚丽的光景；在这里，你亦可以利用身边的工具（nodejs，ts，react等）让数据激发无限潜能，创造属于自己的一万种可能。加入我们，一起去前端的世界探索未知！
+        </p>
+        <a href="#">加入我们</a>
+
+    </div>
+
+
+</body>
+
+</html>
