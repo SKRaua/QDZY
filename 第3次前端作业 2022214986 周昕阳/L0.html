@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let obj = new Object();
+    obj.name = 123;
+    obj.age = 123;
+    let obj1 = {
+        name: 123, age: 123
+    }
+    function fun() {
+        this.name = 123;
+        this.age = 123;
+        this, sayname = () => {
+            console.log(this.name)
+        }
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
