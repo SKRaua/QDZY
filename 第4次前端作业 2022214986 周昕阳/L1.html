@@ -9,6 +9,7 @@
 </head>
 <script>
     let n = prompt('求和，请输入n');
+    n = Number(n);
     let sumTo1 = (n) => {
         let s = 0;
         for (i = 1; i <= n; i++) {
@@ -20,14 +21,14 @@
     console.log('和为' + sumTo1(n));
     function sumTo2(n) {
         if (n > 1) {
-            return n + sumTo2(n = (n - 1));
+            return n + sumTo2(n - 1);
         }
         else {
             return 1;
         }
-    }
-    alert('和为' + sumTo1(n));
-    console.log('和为' + sumTo1(n));
+    };
+    alert('和为' + sumTo2(n));
+    console.log('和为' + sumTo2(n));
 </script>
 
 <body>

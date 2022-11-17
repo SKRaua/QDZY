@@ -8,11 +8,13 @@
     <title>2</title>
 </head>
 <script>
-    function myPush(a, b, c) {
-        arr.push(b, c);
+    function myPush(arr, ...aa) {
+        for (let bb of aa) {
+            arr[arr.length] = bb;
+        }
     }
     let arr = [1];
-    myPush(arr, 2, 3);
+    myPush(arr, 2, 3, 4, 5);
     console.log(arr);
 </script>
 
