@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1</title>
+</head>
+<style>
+    div {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    }
+
+    #d1 {
+        background-color: #00ffff;
+    }
+
+    #d2 {
+        background-color: #ff8c00;
+    }
+
+    #d3 {
+        background-color: #708090;
+    }
+</style>
+
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+</body>
+<script>
+    function doit(div) {
+        let a = document.querySelector(div);
+        a.style.transitionDuration = '1s';
+        a.style.transform = 'translateX(500px)';
+    }
+
+    //1
+    function timer1() {
+        setTimeout(() => {
+            doit('#d1');
+            setTimeout(() => {
+                doit('#d2');
+                setTimeout(() => {
+                    doit('#d3');
+                }, 1000)
+            }, 1000)
+        }, 0)
+
+    }
+    //timer1();
+
+    //2
+    // new Promise(function (resolve, reject) {
+    //     setTimeout(() => resolve(1), 0)
+    // }).then(() => {
+    //     return new Promise((resolve, reject) => {
+    //         doit('#d1');
+    //         setTimeout(() => resolve(1), 1000);
+    //     })
+    // }).then(() => {
+    //     return new Promise((resolve, reject) => {
+    //         doit('#d2');
+    //         setTimeout(() => resolve(1), 1000);
+    //     })
+    // }).then(() => {
+    //     return new Promise((resolve, reject) => {
+    //         doit('#d3');
+    //         setTimeout(() => resolve(1), 1000);
+    //     })
+    // })
+
+
+    //3
+    let step = (div) => {
+        return new Promise((resolve) => {
+            doit(div)
+            setTimeout(() => resolve(1), 1000)
+        })
+    }
+    async function timer3() {
+        await new Promise((resolve) => { setTimeout(() => resolve(1), 0) })
+        await step('#d1');
+        await step('#d2');
+        await step('#d3');
+    }
+    //timer3();
+</script>
+
+</html>
